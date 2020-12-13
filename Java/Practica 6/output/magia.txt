@@ -1,0 +1,122 @@
+tests for: abracadabra
+
+Exercise 1 - weights:
+AVLDictionary(a->5,b->2,c->1,d->1,r->2)
+
+Exercise 2.a - leaves:
+BinaryHeapPriorityQueue((c, 1),(d, 1),(r, 2),(b, 2),(a, 5))
+
+Exercise 2.b - huffman tree with one priority queue:
+                (d, 1)
+            2
+                (c, 1)
+
+        4
+            (r, 2)
+
+    6
+        (b, 2)
+
+11
+    (a, 5)
+
+Exercise 2.c - huffman tree with two queues:
+            (b, 2)
+        4
+            (r, 2)
+
+    6
+            (d, 1)
+        2
+            (c, 1)
+
+
+11
+    (a, 5)
+
+Exercise 3.a - join dictionaries:
+d1: AVLDictionary(a->LinkedList(1,2),c->LinkedList(3,4))
+d2: AVLDictionary(b->LinkedList(5,6),d->LinkedList(7,8))
+join(d1,d2): AVLDictionary(a->LinkedList(1,2),b->LinkedList(5,6),c->LinkedList(3,4),d->LinkedList(7,8))
+
+Exercise 3.b - prefix with:
+prefix d1 with 0: AVLDictionary(a->LinkedList(0,1,2),c->LinkedList(0,3,4))
+prefix d2 with 1: AVLDictionary(b->LinkedList(1,5,6),d->LinkedList(1,7,8))
+
+Exercise 4 - encode:
+using the huffman tree built with one priority queue:
+LinkedList(0,1,0,1,1,0,0,1,1,1,0,0,1,1,1,1,0,1,0,1,1,0,0)
+using the huffman tree built with two queues:
+LinkedList(0,1,1,1,1,1,0,0,1,0,0,0,1,0,1,0,1,1,1,1,1,0,0)
+
+Exercise 5 - decode:
+using the huffman tree built with one priority queue:
+abracadabra
+decoding OK!
+using the huffman tree built with two queues:
+abracadabra
+decoding OK!
+
+Exercise 6 - TODO
+
+Exercise 7.a - serialize:
+serialize the huffman tree built with one priority queue:
+LinkedList(0,1,97,0,1,98,0,1,114,0,1,99,1,100)
+serialize the huffman tree built with two queues:
+LinkedList(0,1,97,0,0,1,99,1,100,0,1,114,1,98)
+
+Exercise 7.b - deserialize:
+deserialize the huffman tree built with one priority queue:
+original tree:
+                (d, 1)
+            2
+                (c, 1)
+
+        4
+            (r, 2)
+
+    6
+        (b, 2)
+
+11
+    (a, 5)
+rebuilt tree:
+                (d, 0)
+            0
+                (c, 0)
+
+        0
+            (r, 0)
+
+    0
+        (b, 0)
+
+0
+    (a, 0)
+deserialize the huffman tree built with two queues:
+original tree:
+            (b, 2)
+        4
+            (r, 2)
+
+    6
+            (d, 1)
+        2
+            (c, 1)
+
+
+11
+    (a, 5)
+rebuilt tree:
+            (b, 0)
+        0
+            (r, 0)
+
+    0
+            (d, 0)
+        0
+            (c, 0)
+
+
+0
+    (a, 0)
