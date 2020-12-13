@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Feb2016" />
+    <orderEntry type="module" module-name="Practica 5" />
+    <orderEntry type="module" module-name="Practica 8" />
+    <orderEntry type="module" module-name="Practica 6" />
+    <orderEntry type="module" module-name="Practica 5" />
+    <orderEntry type="module" module-name="Practica 8" />
+    <orderEntry type="module" module-name="Practica 6" />
+    <orderEntry type="module" module-name="Feb2016" />
+    <orderEntry type="library" name="unit6" level="application" />
+  </component>
+</module>
