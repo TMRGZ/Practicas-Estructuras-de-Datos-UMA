@@ -1,0 +1,12 @@
+tests for: aaa
+
+Exercise 1 - weights:
+AVLDictionary(a->3)
+
+Exercise 2.a - leaves:
+BinaryHeapPriorityQueue((a, 3))
+
+Exercise 2.b - huffman tree with one priority queue:
+Exception in thread "main" HuffmanException: huffmanTree: the string must have at least two different symbols
+	at Huffman.huffmanTree(Huffman.java:51)
+	at HuffmanTest.main(HuffmanTest.java:38)

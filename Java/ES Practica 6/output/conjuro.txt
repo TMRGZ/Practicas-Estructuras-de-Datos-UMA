@@ -1,0 +1,338 @@
+tests for: abracadabra pata de cabra si no sana hoy sanara mañana
+
+Exercise 1 - weights:
+AVLDictionary( ->9,a->17,b->3,c->2,d->2,e->1,h->1,i->1,m->1,n->4,o->2,p->1,r->4,s->3,t->1,y->1,ñ->1)
+
+Exercise 2.a - leaves:
+BinaryHeapPriorityQueue((e, 1),(ñ, 1),(i, 1),(m, 1),(y, 1),(h, 1),(p, 1),(t, 1),(c, 2),(d, 2),(o, 2),(s, 3),(b, 3),(n, 4),(r, 4),( , 9),(a, 17))
+
+Exercise 2.b - huffman tree with one priority queue:
+        (a, 17)
+    33
+                        (t, 1)
+                    2
+                        (p, 1)
+
+                4
+                        (m, 1)
+                    2
+                        (i, 1)
+
+
+            8
+                        (ñ, 1)
+                    2
+                        (e, 1)
+
+                4
+                    (c, 2)
+
+
+        16
+                (n, 4)
+            8
+                    (o, 2)
+                4
+                    (d, 2)
+
+
+
+
+54
+                (r, 4)
+            7
+                (b, 3)
+
+        12
+                (s, 3)
+            5
+                    (h, 1)
+                2
+                    (y, 1)
+
+
+
+    21
+        ( , 9)
+
+
+Exercise 2.c - huffman tree with two queues:
+        (a, 17)
+    33
+                        (h, 1)
+                    2
+                        (y, 1)
+
+                4
+                        (m, 1)
+                    2
+                        (i, 1)
+
+
+            8
+                        (ñ, 1)
+                    2
+                        (e, 1)
+
+                4
+                    (o, 2)
+
+
+        16
+                    (d, 2)
+                4
+                    (c, 2)
+
+            8
+                (r, 4)
+
+
+
+54
+                (n, 4)
+            7
+                (b, 3)
+
+        12
+                (s, 3)
+            5
+                    (t, 1)
+                2
+                    (p, 1)
+
+
+
+    21
+        ( , 9)
+
+
+Exercise 3.a - join dictionaries:
+d1: AVLDictionary(a->LinkedList(1,2),c->LinkedList(3,4))
+d2: AVLDictionary(b->LinkedList(5,6),d->LinkedList(7,8))
+join(d1,d2): AVLDictionary(a->LinkedList(1,2),b->LinkedList(5,6),c->LinkedList(3,4),d->LinkedList(7,8))
+
+Exercise 3.b - prefix with:
+prefix d1 with 0: AVLDictionary(a->LinkedList(0,1,2),c->LinkedList(0,3,4))
+prefix d2 with 1: AVLDictionary(b->LinkedList(1,5,6),d->LinkedList(1,7,8))
+
+Exercise 4 - encode:
+using the huffman tree built with one priority queue:
+LinkedList(1,1,0,1,1,0,0,1,1,1,1,1,1,0,1,0,0,1,1,1,0,0,0,0,1,1,0,1,1,0,0,1,1,1,1,1,0,0,1,0,1,1,1,0,1,1,1,0,1,1,1,1,1,1,0,0,1,0,0,0,0,1,0,1,0,1,0,0,0,1,0,1,0,0,1,1,0,1,1,0,0,1,1,1,1,1,0,0,0,1,0,1,1,0,1,1,0,0,0,0,1,0,0,1,1,0,0,0,1,0,0,0,1,0,1,1,1,1,0,0,1,1,1,0,0,0,1,0,0,1,1,0,0,0,1,0,1,0,0,0,0,0,0,1,0,1,1,1,1,0,0,1,1,1,0,1,1,1,1,1,0,0,1,0,1,1,0,1,1,1,1,0,1,0,1,1,1,1,1,0,0,1,1,1)
+using the huffman tree built with two queues:
+LinkedList(1,1,0,1,1,0,1,0,0,0,1,1,1,0,0,1,0,1,1,1,0,0,1,1,1,1,0,1,1,0,1,0,0,0,1,1,0,0,0,1,0,0,0,1,1,0,1,0,0,1,1,1,0,0,1,0,0,1,1,1,0,1,0,1,0,0,0,1,0,0,1,0,1,1,0,1,1,0,1,0,0,0,1,1,0,0,0,1,0,1,1,0,1,1,0,0,0,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,1,1,1,0,1,1,1,1,1,0,0,1,0,1,1,1,1,1,0,1,0,0,1,0,1,1,1,0,0,0,0,1,0,1,1,1,0,1,1,1,1,1,1,0,0,0,1,1,0,0,1,0,1,1,0,1,1,1,1,0,1,0,1,1,1,1,0,1,1,1,1,1)
+
+Exercise 5 - decode:
+using the huffman tree built with one priority queue:
+abracadabra pata de cabra si no sana hoy sanara mañana
+decoding OK!
+using the huffman tree built with two queues:
+abracadabra pata de cabra si no sana hoy sanara mañana
+decoding OK!
+
+Exercise 6 - TODO
+
+Exercise 7.a - serialize:
+serialize the huffman tree built with one priority queue:
+LinkedList(0,0,1,32,0,0,0,1,121,1,104,1,115,0,1,98,1,114,0,0,0,0,1,100,1,111,1,110,0,0,1,99,0,1,101,1,241,0,0,1,105,1,109,0,1,112,1,116,1,97)
+serialize the huffman tree built with two queues:
+LinkedList(0,0,1,32,0,0,0,1,112,1,116,1,115,0,1,98,1,110,0,0,0,1,114,0,1,99,1,100,0,0,1,111,0,1,101,1,241,0,0,1,105,1,109,0,1,121,1,104,1,97)
+
+Exercise 7.b - deserialize:
+deserialize the huffman tree built with one priority queue:
+original tree:
+        (a, 17)
+    33
+                        (t, 1)
+                    2
+                        (p, 1)
+
+                4
+                        (m, 1)
+                    2
+                        (i, 1)
+
+
+            8
+                        (ñ, 1)
+                    2
+                        (e, 1)
+
+                4
+                    (c, 2)
+
+
+        16
+                (n, 4)
+            8
+                    (o, 2)
+                4
+                    (d, 2)
+
+
+
+
+54
+                (r, 4)
+            7
+                (b, 3)
+
+        12
+                (s, 3)
+            5
+                    (h, 1)
+                2
+                    (y, 1)
+
+
+
+    21
+        ( , 9)
+
+rebuilt tree:
+        (a, 0)
+    0
+                        (t, 0)
+                    0
+                        (p, 0)
+
+                0
+                        (m, 0)
+                    0
+                        (i, 0)
+
+
+            0
+                        (ñ, 0)
+                    0
+                        (e, 0)
+
+                0
+                    (c, 0)
+
+
+        0
+                (n, 0)
+            0
+                    (o, 0)
+                0
+                    (d, 0)
+
+
+
+
+0
+                (r, 0)
+            0
+                (b, 0)
+
+        0
+                (s, 0)
+            0
+                    (h, 0)
+                0
+                    (y, 0)
+
+
+
+    0
+        ( , 0)
+
+deserialize the huffman tree built with two queues:
+original tree:
+        (a, 17)
+    33
+                        (h, 1)
+                    2
+                        (y, 1)
+
+                4
+                        (m, 1)
+                    2
+                        (i, 1)
+
+
+            8
+                        (ñ, 1)
+                    2
+                        (e, 1)
+
+                4
+                    (o, 2)
+
+
+        16
+                    (d, 2)
+                4
+                    (c, 2)
+
+            8
+                (r, 4)
+
+
+
+54
+                (n, 4)
+            7
+                (b, 3)
+
+        12
+                (s, 3)
+            5
+                    (t, 1)
+                2
+                    (p, 1)
+
+
+
+    21
+        ( , 9)
+
+rebuilt tree:
+        (a, 0)
+    0
+                        (h, 0)
+                    0
+                        (y, 0)
+
+                0
+                        (m, 0)
+                    0
+                        (i, 0)
+
+
+            0
+                        (ñ, 0)
+                    0
+                        (e, 0)
+
+                0
+                    (o, 0)
+
+
+        0
+                    (d, 0)
+                0
+                    (c, 0)
+
+            0
+                (r, 0)
+
+
+
+0
+                (n, 0)
+            0
+                (b, 0)
+
+        0
+                (s, 0)
+            0
+                    (t, 0)
+                0
+                    (p, 0)
+
+
+
+    0
+        ( , 0)
+

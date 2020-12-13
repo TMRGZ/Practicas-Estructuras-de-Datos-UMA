@@ -1,0 +1,194 @@
+tests for: abracadabra pata de cabra
+
+Exercise 1 - weights:
+AVLDictionary( ->3,a->9,b->3,c->2,d->2,e->1,p->1,r->3,t->1)
+
+Exercise 2.a - leaves:
+BinaryHeapPriorityQueue((e, 1),(t, 1),(p, 1),(d, 2),(c, 2),( , 3),(r, 3),(b, 3),(a, 9))
+
+Exercise 2.b - huffman tree with one priority queue:
+        (a, 9)
+    15
+            (r, 3)
+        6
+            (b, 3)
+
+
+25
+                (d, 2)
+            3
+                (p, 1)
+
+        6
+            ( , 3)
+
+    10
+            (c, 2)
+        4
+                (t, 1)
+            2
+                (e, 1)
+
+
+
+
+Exercise 2.c - huffman tree with two queues:
+        (a, 9)
+    15
+                (d, 2)
+            3
+                (p, 1)
+
+        6
+            (b, 3)
+
+
+25
+            (r, 3)
+        6
+            ( , 3)
+
+    10
+                (t, 1)
+            2
+                (e, 1)
+
+        4
+            (c, 2)
+
+
+
+Exercise 3.a - join dictionaries:
+d1: AVLDictionary(a->LinkedList(1,2),c->LinkedList(3,4))
+d2: AVLDictionary(b->LinkedList(5,6),d->LinkedList(7,8))
+join(d1,d2): AVLDictionary(a->LinkedList(1,2),b->LinkedList(5,6),c->LinkedList(3,4),d->LinkedList(7,8))
+
+Exercise 3.b - prefix with:
+prefix d1 with 0: AVLDictionary(a->LinkedList(0,1,2),c->LinkedList(0,3,4))
+prefix d2 with 1: AVLDictionary(b->LinkedList(1,5,6),d->LinkedList(1,7,8))
+
+Exercise 4 - encode:
+using the huffman tree built with one priority queue:
+LinkedList(1,1,1,0,0,1,0,1,1,1,0,0,1,1,1,0,1,1,1,1,1,1,0,0,1,0,1,1,1,0,1,0,0,1,1,0,1,1,0,0,0,1,1,1,0,1,0,0,1,1,1,0,0,0,0,0,1,0,0,0,1,1,1,1,0,0,1,0,1,1,1)
+using the huffman tree built with two queues:
+LinkedList(1,1,1,0,0,0,1,1,1,1,0,0,0,1,1,1,0,1,1,1,1,1,0,0,0,1,1,1,1,0,1,0,1,0,1,0,1,1,0,0,1,1,1,1,0,1,0,1,0,1,1,0,0,1,0,0,1,0,0,0,0,1,1,1,0,0,0,1,1,1,1)
+
+Exercise 5 - decode:
+using the huffman tree built with one priority queue:
+abracadabra pata de cabra
+decoding OK!
+using the huffman tree built with two queues:
+abracadabra pata de cabra
+decoding OK!
+
+Exercise 6 - TODO
+
+Exercise 7.a - serialize:
+serialize the huffman tree built with one priority queue:
+LinkedList(0,0,0,0,1,101,1,116,1,99,0,1,32,0,1,112,1,100,0,0,1,98,1,114,1,97)
+serialize the huffman tree built with two queues:
+LinkedList(0,0,0,1,99,0,1,101,1,116,0,1,32,1,114,0,0,1,98,0,1,112,1,100,1,97)
+
+Exercise 7.b - deserialize:
+deserialize the huffman tree built with one priority queue:
+original tree:
+        (a, 9)
+    15
+            (r, 3)
+        6
+            (b, 3)
+
+
+25
+                (d, 2)
+            3
+                (p, 1)
+
+        6
+            ( , 3)
+
+    10
+            (c, 2)
+        4
+                (t, 1)
+            2
+                (e, 1)
+
+
+
+rebuilt tree:
+        (a, 0)
+    0
+            (r, 0)
+        0
+            (b, 0)
+
+
+0
+                (d, 0)
+            0
+                (p, 0)
+
+        0
+            ( , 0)
+
+    0
+            (c, 0)
+        0
+                (t, 0)
+            0
+                (e, 0)
+
+
+
+deserialize the huffman tree built with two queues:
+original tree:
+        (a, 9)
+    15
+                (d, 2)
+            3
+                (p, 1)
+
+        6
+            (b, 3)
+
+
+25
+            (r, 3)
+        6
+            ( , 3)
+
+    10
+                (t, 1)
+            2
+                (e, 1)
+
+        4
+            (c, 2)
+
+
+rebuilt tree:
+        (a, 0)
+    0
+                (d, 0)
+            0
+                (p, 0)
+
+        0
+            (b, 0)
+
+
+0
+            (r, 0)
+        0
+            ( , 0)
+
+    0
+                (t, 0)
+            0
+                (e, 0)
+
+        0
+            (c, 0)
+
+
